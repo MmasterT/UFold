@@ -270,6 +270,7 @@ def model_eval_all_test(contact_net,test_generator):
 
 def main():
     torch.multiprocessing.set_sharing_strategy('file_system')
+    torch.multiprocessing.set_start_method('spawn')
     torch.cuda.set_device(0)
 
     print('Welcome using UFold prediction tool!!!')
@@ -325,8 +326,3 @@ if __name__ == '__main__':
     """
     RNA_SS_data = collections.namedtuple('RNA_SS_data','seq ss_label length name pairs')
     main()
-
-
-
-
-
